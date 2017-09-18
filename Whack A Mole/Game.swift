@@ -4,6 +4,7 @@ class Game{
     
     private var board: Board = Board()
     private var score: Int = 0
+    private var life: Int = 3
     
     public func playSlot(positionI: Int, positionJ: Int){
         
@@ -19,6 +20,7 @@ class Game{
             if score >= 100 {
                 score -= 100
             }
+            life -= 1
         }
         
     }
@@ -53,6 +55,10 @@ class Game{
     
     public func getScore() -> Int{
         return score
+    }
+    
+    public func getLife() -> Int{
+        return life
     }
     
 }

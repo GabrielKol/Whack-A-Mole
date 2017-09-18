@@ -14,6 +14,12 @@
 		080189CB1E1887F30062CA48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080189C91E1887F30062CA48 /* LaunchScreen.storyboard */; };
 		080189D61E1887F30062CA48 /* Whack_A_MoleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080189D51E1887F30062CA48 /* Whack_A_MoleTests.swift */; };
 		080189E11E1887F30062CA48 /* Whack_A_MoleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080189E01E1887F30062CA48 /* Whack_A_MoleUITests.swift */; };
+		083CE43A1F6ECCCB00784718 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083CE4391F6ECCCB00784718 /* LeaderboardViewController.swift */; };
+		083CE43C1F6F22BD00784718 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083CE43B1F6F22BD00784718 /* DatabaseHelper.swift */; };
+		083CE43F1F6F276500784718 /* Whack A Mole.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 083CE43D1F6F276500784718 /* Whack A Mole.xcdatamodeld */; };
+		083CE44A1F6F2B6100784718 /* TopGame+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083CE4481F6F2B6100784718 /* TopGame+CoreDataClass.swift */; };
+		083CE44B1F6F2B6100784718 /* TopGame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083CE4491F6F2B6100784718 /* TopGame+CoreDataProperties.swift */; };
+		083CE44D1F6F384800784718 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083CE44C1F6F384800784718 /* MapAnnotation.swift */; };
 		086DC6341F4658DA001508A6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086DC6331F4658DA001508A6 /* GameViewController.swift */; };
 		086DC6361F465A22001508A6 /* ConclusionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086DC6351F465A22001508A6 /* ConclusionViewController.swift */; };
 		086DC6761F4888F1001508A6 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086DC6751F4888F1001508A6 /* CollectionViewCell.swift */; };
@@ -53,6 +59,12 @@
 		080189DC1E1887F30062CA48 /* Whack A MoleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Whack A MoleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		080189E01E1887F30062CA48 /* Whack_A_MoleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whack_A_MoleUITests.swift; sourceTree = "<group>"; };
 		080189E21E1887F30062CA48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		083CE4391F6ECCCB00784718 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		083CE43B1F6F22BD00784718 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		083CE43E1F6F276500784718 /* Whack A Mole.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Whack A Mole.xcdatamodel"; sourceTree = "<group>"; };
+		083CE4481F6F2B6100784718 /* TopGame+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopGame+CoreDataClass.swift"; sourceTree = "<group>"; };
+		083CE4491F6F2B6100784718 /* TopGame+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopGame+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		083CE44C1F6F384800784718 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		086DC6331F4658DA001508A6 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		086DC6351F465A22001508A6 /* ConclusionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConclusionViewController.swift; sourceTree = "<group>"; };
 		086DC6751F4888F1001508A6 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -89,6 +101,8 @@
 		080189B41E1887F30062CA48 = {
 			isa = PBXGroup;
 			children = (
+				083CE4481F6F2B6100784718 /* TopGame+CoreDataClass.swift */,
+				083CE4491F6F2B6100784718 /* TopGame+CoreDataProperties.swift */,
 				080189BF1E1887F30062CA48 /* Whack A Mole */,
 				080189D41E1887F30062CA48 /* Whack A MoleTests */,
 				080189DF1E1887F30062CA48 /* Whack A MoleUITests */,
@@ -114,13 +128,17 @@
 				086DC6331F4658DA001508A6 /* GameViewController.swift */,
 				086DC6751F4888F1001508A6 /* CollectionViewCell.swift */,
 				086DC6351F465A22001508A6 /* ConclusionViewController.swift */,
+				080189C91E1887F30062CA48 /* LaunchScreen.storyboard */,
+				083CE4391F6ECCCB00784718 /* LeaderboardViewController.swift */,
 				080189C41E1887F30062CA48 /* Main.storyboard */,
 				080189C71E1887F30062CA48 /* Assets.xcassets */,
-				080189C91E1887F30062CA48 /* LaunchScreen.storyboard */,
 				080189CC1E1887F30062CA48 /* Info.plist */,
 				086DC67B1F489557001508A6 /* Board.swift */,
 				086DC67D1F489557001508A6 /* Game.swift */,
 				086DC67E1F489557001508A6 /* Slot.swift */,
+				083CE43B1F6F22BD00784718 /* DatabaseHelper.swift */,
+				083CE43D1F6F276500784718 /* Whack A Mole.xcdatamodeld */,
+				083CE44C1F6F384800784718 /* MapAnnotation.swift */,
 			);
 			path = "Whack A Mole";
 			sourceTree = "<group>";
@@ -278,10 +296,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				086DC6761F4888F1001508A6 /* CollectionViewCell.swift in Sources */,
+				083CE43F1F6F276500784718 /* Whack A Mole.xcdatamodeld in Sources */,
 				086DC6821F489557001508A6 /* Slot.swift in Sources */,
+				083CE44B1F6F2B6100784718 /* TopGame+CoreDataProperties.swift in Sources */,
+				083CE44A1F6F2B6100784718 /* TopGame+CoreDataClass.swift in Sources */,
 				080189C31E1887F30062CA48 /* MenuViewController.swift in Sources */,
 				086DC67F1F489557001508A6 /* Board.swift in Sources */,
+				083CE43A1F6ECCCB00784718 /* LeaderboardViewController.swift in Sources */,
 				086DC6361F465A22001508A6 /* ConclusionViewController.swift in Sources */,
+				083CE44D1F6F384800784718 /* MapAnnotation.swift in Sources */,
+				083CE43C1F6F22BD00784718 /* DatabaseHelper.swift in Sources */,
 				086DC6341F4658DA001508A6 /* GameViewController.swift in Sources */,
 				080189C11E1887F30062CA48 /* AppDelegate.swift in Sources */,
 				086DC6811F489557001508A6 /* Game.swift in Sources */,
@@ -552,6 +576,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		083CE43D1F6F276500784718 /* Whack A Mole.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				083CE43E1F6F276500784718 /* Whack A Mole.xcdatamodel */,
+			);
+			currentVersion = 083CE43E1F6F276500784718 /* Whack A Mole.xcdatamodel */;
+			path = "Whack A Mole.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 080189B51E1887F30062CA48 /* Project object */;
 }

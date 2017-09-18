@@ -4,15 +4,17 @@ import UIKit
 class GameViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var timerLabel: UILabel!
-    var seconds = 60
+    var seconds = 30
     var primaryTimer = Timer()
     var subTimer = Timer()
     
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var lifeLabel: UILabel!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var imageNames = ["mole_empty", "mole_healthy", "mole_ill"]
+    var images = [UIImage(named: "mole_empty"), UIImage(named: "mole_healthy"), UIImage(named: "mole_ill")]
     
     var game = Game()
     
@@ -53,8 +55,12 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath as IndexPath) as! CollectionViewCell
-        // Setting images:
-        cell.imageView.image = UIImage(named: imageNames[getCreatureValueInSlot(position: indexPath.row)])
+        // Setting images (with animation):
+        UIView.transition(with: cell.imageView,
+                          duration:0.5,
+                          options: .transitionCrossDissolve,
+                          animations: { cell.imageView.image = self.images[self.getCreatureValueInSlot(position: indexPath.row)] },
+                          completion: nil)
         return cell
     }
     
@@ -63,8 +69,17 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         game.playSlot(positionI: indexPath.row / Board.getNumberOfCols(), positionJ: indexPath.row % Board.getNumberOfCols())
-        cell.imageView.image = UIImage(named: imageNames[0])
+        cell.imageView.image = images[0]
         scoreLabel.text = "Score: " + String(game.getScore())
+        lifeLabel.text = "Life: " + String(game.getLife())
+        if(game.getLife() == 0){
+            primaryTimer.invalidate()
+            subTimer.invalidate()
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let conclusionVC = storyBoard.instantiateViewController(withIdentifier: "conclusionVC") as! ConclusionViewController
+            conclusionVC.finalScore = game.getScore()
+            self.present(conclusionVC, animated: true, completion: nil)
+        }
     }
     
     func getCreatureValueInSlot(position: Int) -> Int {
